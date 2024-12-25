@@ -140,4 +140,25 @@ class ThemeController extends Controller
             'message' => trans('admin::app.settings.themes.delete-success'),
         ], 200);
     }
+
+    public function uploadImage()
+{
+    $data = request()->validate([
+        'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
+    ]);
+
+    if (request()->hasFile('image')) {
+        $file = request()->file('image');
+        
+        $path = Storage::disk('r2')->put('theme/images', $file, 'public');
+        
+        $url = config('filesystems.disks.r2.endpoint') . '/' . config('filesystems.disks.r2.bucket') . '/' . $path;
+
+        return response()->json([
+            'url' => $url
+        ]);
+    }
+
+    return response()->json(['message' => 'No image found'], 400);
+}
 }

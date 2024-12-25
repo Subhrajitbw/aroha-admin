@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html
     lang="{{ app()->getLocale() }}"
     dir="{{ core()->getCurrentLocale()->direction }}"
 >
     <head>
-        <!-- meta tags -->
+        <!-- meta tags -
         <meta http-equiv="Cache-control" content="no-cache">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -48,7 +48,7 @@
                 ];
 
                 $fontFamily = [
-                    'regular' => 'Hind',
+                    'regular' => 'Hind ',
                     'bold'    => 'Hind Bold',
                 ];
             } elseif (app()->getLocale() == 'bn') {
@@ -74,24 +74,24 @@
             }
         @endphp
 
-            <!-- lang supports inclusion -->
+        <!-- lang supports inclusion --
         <style type="text/css">
             @if (! empty($fontPath['regular']))
-@font-face {
+            @font-face {
                 src: url({{ $fontPath['regular'] }}) format('truetype');
                 font-family: {{ $fontFamily['regular'] }};
             }
             @endif
 
             @if (! empty($fontPath['bold']))
-@font-face {
+            @font-face {
                 src: url({{ $fontPath['bold'] }}) format('truetype');
                 font-family: {{ $fontFamily['bold'] }};
                 font-style: bold;
             }
             @endif
 
-        * {
+            * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -123,9 +123,9 @@
             }
 
             .logo-container {
-                position: absolute;
                 top: 20px;
                 left: 20px;
+                background-color: 'blue';
             }
 
             .logo-container.rtl {
@@ -234,18 +234,19 @@
                     <span>Logo Image not found or type unknown</span>
                 @endif
             @else
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAAAkCAYAAABFRuIOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAV6SURBVHgB7VrRceM2EH3K+eMyk5nIacBwBfFVELoC+yoIXYHtCs6u4HwVmFdBfH/5E5MGrFRguAIrf/nJKHwiEC5XIAVKViLq+GbWFIAFCGCXi92FgQEDNkBS0MeCHgt6KWjunpOCrgoyGLD3oALMI+gDBvQGb9ANvxSUivK0oF8L+lLQrKC3BY1dW+Kev2HAXoFfuP/aeSQkDXxpQU+C9xwD9gYGlWAp5HEEv/QdVvEP6AnuUClCEtnnSvS5woC9AKMBbw26wFuFCQbsBbxAH9ANGarjYcAO45tIPn/GT9ENVvX/mkDnmhaU1vAEO45RsPZ0Pq+VJ47N3ADHHdIDT7eFKtz4MaHGHLX05MZ9FOXPKK1LX5AWdC/KDK0PscM4wG6CFiQR5b7lIrQF2HmLuKuK0HdkBZ2hSrXfYnPQQkoFO8UrYlCE7YC+1DuUgpuhu28VAsdKsCX0URHGjiy6Yd1+su/MUQzIl0fyGve02A7MqvHjoobvnEX69gid4PnfGrwCUlS3nT6FPUH97kOCgvvgeF5UP45DZ86gHbL/k3s+uncmrs6TTKUb1XaH8HpkfkbPLRFzCM31XpAJjJ+oubfuWVzUQPxl1xMo+x2MS5JojxoS1JNQFu1C40ZfizJ5uaGrnDSL8qy1qt6gvGBrC/uYU5HCv0AV2RjUk2+Za4ebE8dOsHpuxyj3YRUv15B3HD9DuWcLCxebR1j/q2a/g42dZrOinSlsGW5aLJ/LrJsFxr3HMmJi/3Uv0y5RF5I/Qkhyzus6mDGKQ6QoFWaBeEX4/8FNoubTkjAm1xtFZUhEme2560P+Y/ekE2cFX6L6pagrHgV17fqO3DhdM6wSUoGsG+/U0TtX5twzx3Pt2rRinwqairmfqPH9npEusLx29umNIljUzR+Fc1PQJ8UnNzkXfaQl4KZpJZKb97NqoyDuxBi2oPeIdwQ1xuq3Ue0W5do8plheA1BZEdl2qXjknhEZqiPKY7HevkQN/h9fNCgguXij2rnR567+SNWjoWzEb74zQxjMdiboDq7lUrz3EVWISWLyLEd8dAIxllToHOEowdcbV074py+KMG2ot6r8vfjNzb7BZlm9rsKIAZVXJpsIn0kl8YizKOf+GfHQ6/yzhdeq9x/1RRGaHDfTUJ+iHrJRoA+qX9LQ16Ia17h3hxTxJ6wHi9IPSFEphF4f67KCnhF/BGmlbYv1tdI898VHOGuo1+f5Hw38dMIuBLV55Ppeg561UXW0Nik2Q4bS1+DcRu6pfZ5VkYsEFcGqvibAZ1Afd6HkfVEEg2WBeNMv4b96qfF6g4i2r1k6hv7d/jp5guYEUSwMypBVC5kCyVSdXMezaksCfPoo0WFwguV/ElooX59SzOeOLKqUr0SGyozSMiTut0+wfHHlM7TnAKgE9LYn6h0JXgfMFKaOrCDvJ0jI44yKIi0g55ejFDQt3B0q/8ML36ByRoHlPftX+fpiEeQZbbC8oBz1zCI3xIoyBe/TsedYndPn+2iqHxraH9T7YsF5p6JsUMXy56iv6xb1dWdYnnfi+vijkAJ/H+ALfThTx7tAXxSBm86Nsareokq4zFQ960Jed464K1yLcqOO3fPCPQ/dcxzgX4WZG4/zmjbw5G5+N4G+TWuCmI9177hoeEeOcs9qibVRcMjQXcNro/2uoQ0G1U2gjeD3SZsZut0e0gf5hOY5TFD3WQ6BtWJ/T13m12VNUbx9VIT/AinKY8SiPAZkQusE5TlvBH+G5YxdrzAoQhiMDEwkr0X4BrNXCEcNv/+Arxg0pTIN3AaLPVACIvxVvjncvkX4+2WXLQJhUHrlPAp+RP0spxNGpy3HnmBQhAEL9On/EQZsEWEfYTSPibMH7BH+AYPFe45OKcPoAAAAAElFTkSuQmCC"/>
+                <img src="data:image/png;base64,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"/>
             @endif
         </div>
 
         <div class="page">
-            <!-- Header -->
+            <!-- Header -
             <div class="page-header">
                 <b>@lang('admin::app.sales.invoices.invoice-pdf.invoice')</b>
             </div>
 
             <div class="page-content">
-                <!-- Invoice Information -->
+                <!-- Invoice Information -
                 <table class="{{ core()->getCurrentLocale()->direction }}">
                     <tbody>
                         <tr>
@@ -298,7 +299,7 @@
                     </tbody>
                 </table>
 
-                <!-- Invoice Information -->
+                <!-- Invoice Information --
                 <table class="{{ core()->getCurrentLocale()->direction }}">
                     <tbody>
                         <tr>
@@ -347,7 +348,7 @@
                     </tbody>
                 </table>
 
-                <!-- Billing & Shipping Address -->
+                <!-- Billing & Shipping Address --
                 <table class="{{ core()->getCurrentLocale()->direction }}">
                     <thead>
                         <tr>
@@ -373,7 +374,7 @@
                         <tr>
                             @if ($invoice->order->billing_address)
                                 <td style="width: 50%">
-                                    <div>{{ $invoice->order->billing_address->company_name ?? '' }}<div>
+                                    <div>{{ $invoice->order->billing_address->company_name ?? '' }}</div>
 
                                     <div>{{ $invoice->order->billing_address->name }}</div>
 
@@ -389,7 +390,7 @@
 
                             @if ($invoice->order->shipping_address)
                                 <td style="width: 50%">
-                                    <div>{{ $invoice->order->shipping_address->company_name ?? '' }}<div>
+                                    <div>{{ $invoice->order->shipping_address->company_name ?? '' }}</div>
 
                                     <div>{{ $invoice->order->shipping_address->name }}</div>
 
@@ -406,7 +407,7 @@
                     </tbody>
                 </table>
 
-                <!-- Payment & Shipping Methods -->
+                <!-- Payment & Shipping Methods --
                 <table class="{{ core()->getCurrentLocale()->direction }}">
                     <thead>
                         <tr>
@@ -428,6 +429,7 @@
 
                     <tbody>
                         <tr>
+ 
                             <td style="width: 50%">
                                 {{ core()->getConfigData('sales.payment_methods.' . $invoice->order->payment->method . '.title') }}
 
@@ -451,7 +453,7 @@
                     </tbody>
                 </table>
 
-                <!-- Items -->
+                <!-- Items --
                 <div class="items">
                     <table class="{{ core()->getCurrentLocale()->direction }}">
                         <thead>
@@ -542,7 +544,7 @@
                     </table>
                 </div>
 
-                <!-- Summary Table -->
+                <!-- Summary Table --
                 <div class="summary">
                     <table class="{{ core()->getCurrentLocale()->direction }}">
                         <tbody>
@@ -625,4 +627,422 @@
             </div>
         </div>
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}" dir="{{ core()->getCurrentLocale()->direction }}">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: DejaVu Sans, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+
+        }
+
+        .container {
+            background-color: #f2f2f2;
+        }
+
+        /* Header Blocks */
+        .header-section {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .invoice-desc{
+            width: 50%;
+            padding: 10px 25% 10px 25%;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .store-desc {
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .invoice-desc {
+            background-color: #d5ccc3;
+        }
+        .invoice-desc p {
+            margin: 5px 0; /* Adjust margin for paragraphs */
+            color: #000; /* Ensure text is white for visibility */
+        }
+
+        .store-desc {
+            background-color: #837059;
+        }
+
+        .invoice-desc h1,
+        .store-desc h1,
+        .store-desc p {
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .address-section {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bill-to,
+        .ship-to {
+            width: 50%;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .address-header {
+            text-align: left;
+        }
+
+        .bill-to .address-header,
+        .ship-to .address-header {
+            background-color: #b29779;
+        }
+
+        .address-header p {
+            color: #6e5438;
+            margin: 0px 0px 0px 25%;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .address-content {
+            padding: 5px;
+            text-align: left;
+            color: #000;
+        }
+
+        .address-content p {
+            margin: 0px 0px 0px 25%;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        /* Products Table */
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .products-table th,
+        .products-table td {
+            padding: 2px 12px 2px 12px;
+            text-align: left;
+        }
+
+        .products-table td {
+            border-bottom: 1px solid #6e5438;
+        }
+
+        .products-table th {
+            border-right: 4px solid #6e5438;
+            background-color: #d5ccc3;
+            font-weight: bold;
+            padding: 4px 8px;
+            /* Decreased padding for height reduction */
+            font-size: 10px;
+            color: #6e5438
+            /* Decreased font size */
+        }
+
+        .products-table td {
+            font-size: 10px;
+            /* Decreased font size */
+        }
+
+        /* Totals Section */
+        .totals-table {
+            width: 300px;
+            margin-left: auto;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+
+
+        .totals-table td {
+            padding: 8px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .totals-table tr:last-child td {
+            font-weight: bold;
+            padding: 2px;
+            border-top: 2px solid #ddd;
+        }
+
+        /* Footer */
+        /* Footer */
+        .footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            margin-bottom: 40px;
+
+            padding: 0;
+        }
+
+        .footer-content {
+            width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border-bottom: 2px solid #6e5438;
+
+        }
+
+        .footer-column {
+            width: 33.33%;
+            text-align: center;
+            padding: 10px;
+            color: #666;
+            font-size: 10px;
+        }
+
+        .website-url {
+            width: 600px;
+            margin: 10px auto 0;
+            text-align: center;
+            color: #666;
+            font-size: 10px;
+        }
+
+        /* RTL Support */
+        .rtl {
+            direction: rtl;
+        }
+
+        .rtl .products-table th,
+        .rtl .products-table td,
+        .rtl .totals-table td {
+            text-align: right;
+        }
+
+        .rtl .totals-table {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        .spacer {
+            width: 100%;
+            height: 20px;
+            background-color: #b29779;
+        }
+
+        .last {
+            background-color: #d5ccc3;
+        }
+
+        .total {
+            color: #6e5438
+        }
+    </style>
+</head>
+
+<body class="{{ core()->getCurrentLocale()->direction === 'rtl' ? 'rtl' : '' }}">
+    <div class="container">
+        <!-- Header -->
+        <table class="header-section">
+            <tr>
+            <td class="invoice-desc">
+                    <h1>{{ __('TAX INVOICE') }}</h1>
+                    <p>{{ __('Invoice No:') }} {{ $invoice->id }}</p>
+                    <p>{{ __('Invoice Date:') }} {{ $invoice->created_at->format('d/m/Y') }}</p>
+                    <p>{{ __('Customer ID:') }} {{ $invoice->order->customer_id }}</p> <!-- Added Customer ID -->
+                    <p>{{ __('Order ID:') }} {{ $invoice->order->id }}</p>
+                    <p>{{ __('Order Date:') }} {{ $invoice->order->created_at->format('d/m/Y') }}</p> <!-- Added Order Date -->
+                </td>
+                <td class="store-desc">
+                    @if (core()->getConfigData('sales.invoice_settings.pdf_print_outs.logo'))
+                                        @php
+                                            $logoPath = core()->getConfigData('sales.invoice_settings.pdf_print_outs.logo');
+                                            if (Storage::exists($logoPath)) {
+                                                $logoData = base64_encode(Storage::get($logoPath));
+                                                $mimeType = Storage::mimeType($logoPath);
+                                                $logoDataUrl = 'data:' . $mimeType . ';base64,' . $logoData;
+                                            }
+                                        @endphp
+                                        <img src="{{ $logoDataUrl ?? '' }}" alt="Logo" style="max-width: 150px; margin-bottom: 10px;">
+                    @endif
+
+                    @if (!empty(core()->getConfigData('sales.shipping.origin.country')))
+                        <div
+                            style="margin-top: 10px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: bottom;">
+                            <p style="color: #fff; font-size: 8px; font-weight: bold; text-align: left;">Address:
+                                {{ core()->getConfigData('sales.shipping.origin.address') }},
+                                {{ core()->getConfigData('sales.shipping.origin.zipcode') . ' ' . core()->getConfigData('sales.shipping.origin.city') }},
+                                {{ core()->getConfigData('sales.shipping.origin.state') . ', ' . core()->getConfigData('sales.shipping.origin.country') }}
+                            </p>
+                        </div>
+                        <div>
+                            <p style="color: #fff; font-size: 8px; font-weight: bold; text-align: left;">GST No:
+                                {{ core()->getConfigData('sales.shipping.origin.vat_number') }}
+                            </p>
+                            <!-- Replace with actual GST number if available -->
+                        </div>
+                        <div>
+                            <p style="color: #fff; font-size: 8px; font-weight: bold; text-align: left;">
+                                {{ core()->getConfigData('sales.shipping.origin.bank_details') }}
+                            </p>
+                            <!-- Replace with actual GST number if available -->
+                        </div>
+                        <!-- <div style="margin-top: 10px; display: flex; justify-content: space-between;">
+                                        <span>Bank Account No: 1234567890</span> <!-- Replace with actual account number --
+                                        <span>IFSC: ABCD0123456</span> <!-- Replace with actual IFSC code --
+                                        <span>Branch: Main Branch</span> <!-- Replace with actual branch name --
+                                    </div> -->
+                    @endif
+                </td>
+            </tr>
+        </table>
+
+        <!-- Addresses -->
+        <!-- Addresses -->
+        <table class="address-section">
+            <tr>
+                <td class="bill-to">
+                    <div class="address-header">
+                        <p>{{ __('BILL TO') }}</p>
+                    </div>
+                    <div class="address-content">
+                        @if ($invoice->order->billing_address)
+                            <p>Client name: {{ $invoice->order->billing_address->name }}</p>
+                            <p>Address: {{ $invoice->order->billing_address->address }}</p>
+                            <p>Phone: {{ $invoice->order->billing_address->phone }}</p>
+                            <p>Email: {{ $invoice->order->billing_address->email }}</p>
+                        @else
+                            <p>{{ __('No billing address available') }}</p>
+                        @endif
+                    </div>
+                </td>
+                <td class="ship-to">
+                    <div class="address-header">
+                        <p>{{ __('SHIP TO') }}</p>
+                    </div>
+                    <div class="address-content">
+                        @if ($invoice->order->shipping_address)
+                            <p>Client name: {{ $invoice->order->shipping_address->name }}</p>
+                            <p>Address: {{ $invoice->order->shipping_address->address }}</p>
+                            <p>Phone: {{ $invoice->order->shipping_address->phone }}</p>
+                            <p>Email: {{ $invoice->order->shipping_address->email }}</p>
+                        @else
+                            <p>{{ __('No shipping address available') }}</p>
+                        @endif
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="address-section">
+            <tr>
+                <td class="bill-to">
+                    <div class="address-header">
+                        <p>{{ __('BILLING METHOD') }}</p>
+                    </div>
+                    <div class="address-content">
+                        <p>{{ core()->getConfigData('sales.payment_methods.' . $invoice->order->payment->method . '.title') }}
+                        </p>
+
+                        @php 
+                            $additionalDetails = \Webkul\Payment\Payment::getAdditionalDetails($invoice->order->payment->method); 
+                        @endphp
+
+                        @if (!empty($additionalDetails))
+                            <p>{{ $additionalDetails['title'] }}:</p>
+                        @endif
+                    </div>
+                </td>
+                <td class="ship-to">
+                    <div class="address-header">
+                        <p>{{ __('SHIPPING METHOD') }}</p>
+                    </div>
+                    <div class="address-content">
+                        @if ($invoice->order->shipping_address)
+                            <p>{{ $invoice->order->shipping_title ?? __('Not specified') }}</p>
+                        @else
+                            <p>{{ __('No shipping address available') }}</p>
+                        @endif
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="spacer"></div>
+        <!-- Products -->
+        <table class="products-table">
+            <thead>
+                <tr>
+                    <th>{{ __('Si.No') }}</th>
+                    <th>{{ __('Product') }}</th>
+                    <th>{{ __('HSN') }}</th>
+                    <th>{{ __('Unit Price') }}</th>
+                    <th>{{ __('Quantity') }}</th>
+                    <th>{{ __('Total') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($invoice->items as $index => $item)
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->sku }}</td>
+                        <td>{{ core()->formatBasePrice($item->price) }}</td>
+                        <td>{{ $item->qty }}</td>
+                        <td>{{ core()->formatBasePrice($item->total) }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        <!-- Totals -->
+        <table class="totals-table">
+            <tr>
+                <td>{{ __('Sub Total:') }}</td>
+                <td>{{ core()->formatBasePrice($invoice->sub_total) }}</td>
+            </tr>
+            <tr>
+                <td>{{ __('GST (18%):') }}</td>
+                <td>{{ core()->formatBasePrice($invoice->tax_amount) }}</td>
+            </tr>
+            <tr class="last">
+                <td class="total">{{ __('Total:') }}</td>
+                <td>{{ core()->formatBasePrice($invoice->grand_total) }}</td>
+            </tr>
+        </table>
+
+        <!-- Footer -->
+        <div class="footer">
+            <table class="footer-content">
+                <tr>
+                    <td class="footer-column">
+                        {{ __('9 Mayfair Road, Kolkata - 700019') }}
+                    </td>
+                    <td class="footer-column">
+                        {{ __('+91 98309 39714') }}
+                    </td>
+                    <td class="footer-column">
+                        {{ __('contact@arohahouse.com') }}
+                    </td>
+                </tr>
+
+            </table>
+            <div class="website-url">
+                {{ __('www.arohahouse.com') }}
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
 </html>
